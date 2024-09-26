@@ -1,26 +1,33 @@
 # Ejercicio 1: Suma de elementos en una lista de listas
 def suma_matriz(matriz):
-    """
-    Recibe una lista de listas y devuelve la suma de todos sus elementos.
-    Incluir el código aquí para sumar los elementos de la matriz.
-    """
-    pass
+    suma = 0
+
+    for filas in matriz:
+        for dato in filas:
+            suma+=dato
+    return suma
 
 # Ejercicio 2: Encontrar el valor máximo en una matriz
 def maximo_matriz(matriz):
-    """
-    Recibe una lista de listas y devuelve el valor máximo.
-    Incluir el código aquí para encontrar el valor máximo en la matriz.
-    """
-    pass
+    for fila in matriz:
+        for elemento in fila:
+            if elemento > maximo:
+                maximo = elemento
+    return maximo
+    
 
 # Ejercicio 3: Verificar si un número es primo
 def es_primo(n):
-    """
-    Recibe un número y devuelve True si es primo, False en caso contrario.
-    Incluir el código aquí para determinar si un número es primo.
-    """
-    pass
+   
+   
+   
+    if n <= 1:  
+        return False
+   
+    for i in range(2, n):  
+        if n % i == 0:  
+            return False
+    return True
 
 # Ejercicio 4: Transponer una matriz
 def transponer_matriz(matriz):
@@ -32,11 +39,15 @@ def transponer_matriz(matriz):
 
 # Ejercicio 5: Filtrar números pares
 def filtrar_pares(lista):
-    """
-    Recibe una lista de números y devuelve una nueva lista con solo los números pares.
-    Incluir el código aquí para filtrar los números pares.
-    """
-    pass
+
+     transpuesta = []
+     for i in range(len(lista[0])):  
+        nueva_fila = []
+        for j in range(len(lista)):  
+            nueva_fila.append(lista[j][i])
+        transpuesta.append(nueva_fila)
+        return transpuesta
+   
 
 # Ejercicio 6: Contar la cantidad de palabras en una frase
 def contar_palabras(frase):
@@ -48,11 +59,18 @@ def contar_palabras(frase):
 
 # Ejercicio 7: Crear una tabla de multiplicar
 def tabla_multiplicar(n):
-    """
-    Recibe un número y devuelve una lista con su tabla de multiplicar del 1 al 10.
-    Incluir el código aquí para generar la tabla de multiplicar.
-    """
-    pass
+   
+   tabla = []
+   for i in range(1, 11):
+     
+        tabla.append(n * i)
+    
+
+        return tabla
+
+
+
+    
 
 # Ejercicio 8: Contar números negativos en una lista
 def contar_negativos(lista):
