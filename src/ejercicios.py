@@ -9,11 +9,20 @@ def suma_matriz(matriz):
 
 # Ejercicio 2: Encontrar el valor máximo en una matriz
 def maximo_matriz(matriz):
-    for fila in matriz:
-        for elemento in fila:
-            if elemento > maximo:
-                maximo = elemento
-    return maximo
+      
+      
+        maximo = matriz[0][0]
+
+    
+    
+        for fila in matriz:
+
+            for elemento in fila:
+                
+                if elemento > maximo:
+                    maximo = elemento
+                
+                return maximo
     
 
 # Ejercicio 3: Verificar si un número es primo
@@ -40,14 +49,13 @@ def transponer_matriz(matriz):
 # Ejercicio 5: Filtrar números pares
 def filtrar_pares(lista):
 
-     transpuesta = []
-     for i in range(len(lista[0])):  
-        nueva_fila = []
-        for j in range(len(lista)):  
-            nueva_fila.append(lista[j][i])
-        transpuesta.append(nueva_fila)
-        return transpuesta
-   
+    pares = []
+    for elemento in lista:
+        if elemento % 2 == 0:
+            pares.append(elemento)
+    return pares
+
+     
 
 # Ejercicio 6: Contar la cantidad de palabras en una frase
 def contar_palabras(frase):
@@ -59,14 +67,13 @@ def contar_palabras(frase):
 
 # Ejercicio 7: Crear una tabla de multiplicar
 def tabla_multiplicar(n):
-   
-   tabla = []
-   for i in range(1, 11):
-     
-        tabla.append(n * i)
-    
 
-        return tabla
+    tabla = []
+    for i in range(1, 11):
+        tabla.append(n * i)
+    return tabla
+   
+   
 
 
 
