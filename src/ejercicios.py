@@ -9,20 +9,20 @@ def suma_matriz(matriz):
 
 # Ejercicio 2: Encontrar el valor máximo en una matriz
 def maximo_matriz(matriz):
-      
-      
-        maximo = matriz[0][0]
-
+   
+    if not matriz:
+        return None
     
     
-        for fila in matriz:
+    maximo = matriz[0][0]
+    
 
-            for elemento in fila:
-                
-                if elemento > maximo:
-                    maximo = elemento
-                
-                return maximo
+    for fila in matriz:
+        for numero in fila:
+            if numero > maximo:
+                maximo = numero  
+    return maximo  
+
     
 
 # Ejercicio 3: Verificar si un número es primo
@@ -40,11 +40,16 @@ def es_primo(n):
 
 # Ejercicio 4: Transponer una matriz
 def transponer_matriz(matriz):
-    """
-    Recibe una lista de listas y devuelve la matriz transpuesta.
-    Incluir el código aquí para transponer la matriz.
-    """
-    pass
+    transpuesta = []
+    
+    # Recorremos por columnas
+    for i in range(len(matriz[0])):  
+        nueva_fila = []
+        for fila in matriz:  
+            nueva_fila.append(fila[i])  
+        transpuesta.append(nueva_fila)  
+    return transpuesta
+
 
 # Ejercicio 5: Filtrar números pares
 def filtrar_pares(lista):
@@ -58,12 +63,16 @@ def filtrar_pares(lista):
      
 
 # Ejercicio 6: Contar la cantidad de palabras en una frase
+
 def contar_palabras(frase):
-    """
-    Recibe una frase y devuelve el número de palabras.
-    Incluir el código aquí para contar las palabras en la frase.
-    """
-    pass
+
+    palabras = frase.split()
+    
+   
+    return len(palabras)
+
+
+
 
 # Ejercicio 7: Crear una tabla de multiplicar
 def tabla_multiplicar(n):
@@ -81,19 +90,28 @@ def tabla_multiplicar(n):
 
 # Ejercicio 8: Contar números negativos en una lista
 def contar_negativos(lista):
-    """
-    Recibe una lista de números y devuelve la cantidad de números negativos.
-    Incluir el código aquí para contar los números negativos en la lista.
-    """
-    pass
+ 
+    contador = 0
+    for numero in lista:
+        if numero < 0:
+            contador += 1
+    return contador
+
 
 # Ejercicio 9: Determinar si una lista está ordenada
 def lista_ordenada(lista):
-    """
-    Recibe una lista de números y devuelve True si está ordenada de menor a mayor.
-    Incluir el código aquí para verificar si la lista está ordenada.
-    """
-    pass
+  
+   
+    if len(lista) <= 1:
+        return True
+    
+    
+    for i in range(len(lista) - 1):
+        if lista[i] > lista[i + 1]:
+            return False
+    
+    return True
+
 
 # Ejercicio 10: Cifrar un texto con el cifrado César
 def cifrado_cesar(texto, desplazamiento):
